@@ -1,0 +1,55 @@
+/**app.wxss**/
+@import "./template/list.wxss";
+page{font-size: 0.9rem;}
+.c1b{color: #1b8dff;}
+.cf0{color: #f04641;}
+/* .youc{border-top:1px solid #e3e3e3;} */
+.youc_content{padding:0.8rem;}
+.show{display:flex;}
+.hidden{display: none;}
+.course_menu .ment.active{color: #212121;}
+.course_menu .ment.active::after{display: block;}
+.flex{display: flex;display:-webkit-flex;}
+.jusb{justify-content: space-between}
+.act{align-items:center;}
+.tov{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.beij{background: rgba(0, 0, 0, 0.5);width: 100%;height: 100%;position:fixed;left: 0;top: 0;z-index:-1;opacity: 0;
+ -webkit-transition: all 300ms ease-in-out;
+ transition:all 300ms ease-in-out;
+ display: none;
+}
+/* .beij.on{opacity: 1.0;z-index: 9} */
+.couse_fix{color:#1c1c1c;height: 3.0rem;background: #fff;position: fixed;left: 0;bottom: 0;width: 100%;justify-content:space-around;align-items:center;}
+.couse_fix image{width: 1.5rem;height: 1.5rem;margin-right: 0.6rem;}
+.couse_fix navigator{display: flex;display: -webkit-flex;align-items:center;}
+.ask_lt .ask_top{color: #979797;font-size: 0.8rem;margin-bottom: 0.5rem;}
+.ask_lt .ask_text{background: #f2f2f2;padding: 0.8rem;color: #545454;font-size: 0.85rem;word-break:break-all;word-wrap:break-word;}
+
+/* 底部输入框 */
+.ans_reply{height:3.0rem;line-height:3.0rem;color: #979797;position: fixed;bottom: 0;left: 0;width: 100%;background: #fff;border-top:1px solid #e6e6e6;display: flex;display: -webkit-flex;align-items:center;}
+.ans_reply_text{height: 2.0rem;line-height: 2.0rem;width:90%;margin:0 auto;padding:0 0.8rem;background: #f5f5f5;border-radius:1.5rem;
+-webkit-box-sizing: border-box; 
+ box-sizing: border-box; 
+}
+.ans_form .form{background: #fff;padding: 0.8rem;position:fixed;width: 100%;left: 0;bottom:-200%;z-index:20;height:100%;
+-webkit-box-sizing:border-box; 
+ box-sizing:border-box;
+ -webkit-transition: all 800ms ease-in-out;
+ transition:all 800ms ease-in-out;
+}
+.ans_form .form_btn button{padding: 0;margin:0;font-size:1.0rem;line-height:1.4rem;background-color:#fff;}
+.ans_form .form_btn button::after{border: none;}
+.ans_form .form_text{padding:0.5rem 0;color: #9e9e9e;width: 100%;height:12.0rem;}
+.ans_form .btn_sum.on{color:#55dd0b;}
+.ans_form .form.on{z-index: 10;bottom: 0}
+
+/* 无信息 */
+.none_content{text-align: center;width: 100%}
+.none_content image{width:6.0rem;margin:2.0rem 0 0.5rem;}
+.none_text{color:#BEBEBE;font-size:0.75rem;}
+.none_btn{display: block;width:6.0rem;height:1.5rem;text-align: center;line-height:1.5rem;color:#1A8CFE;border:1px solid #1A8CFE;border-radius:1.0rem;font-size: 0.8rem;margin:0.6rem auto 0;}
+/* 详情页 */
+.cname{padding-top: 4.0rem;}
+.cname_top_teacher{position:fixed;width:100%;background:#fff;left:0;top:0;border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;padding:0.8rem;box-sizing:border-box;
+-webkit-box-sizing:border-box;
+}

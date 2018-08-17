@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/indexNotLogIn/indexNotLogIn",
+    "pages/login/login",
+    "pages/pingjia/pingjia",
+    "pages/video/video",
+    "pages/discussInfo/discussInfo",
+    "pages/weeklyInfo/weeklyInfo",
+    "pages/weekly/weekly",
+    "pages/jobHasPostImt/jobHasPostImt",
+    "pages/jobNotPostImt/jobNotPostImt",
+    "pages/jobNotPost/jobNotPost",
+    "pages/myRenwuNotes/myRenwuNotes",
+    "pages/myRenwuAsk/myRenwuAsk",
+    "pages/mynotes/mynotes",
+    "pages/renwuInfo/renwuInfo",
+    "pages/sectionInfo/sectionInfo",
+    "pages/myask/myask",
+    "pages/ansForm/ansForm",
+    "pages/message/message",
+    "pages/course/course",
+    "pages/courseInfo/courseInfo",
+    "pages/ansInfo/ansInfo",
+    "pages/messageDetail/messageDetail",
+    "pages/person/index",
+    "pages/person/message",
+    "pages/person/messageChange",
+    "pages/account/index",
+    "pages/examCenter/index",
+    "pages/examCenter/detail",
+    "pages/examCenter/examPaper",
+    "pages/renwuAsk/renwuAsk",
+    "pages/renwunotes/renwunotes"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "优才库",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#1a8cfe",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/iconf1.png",
+        "selectedIconPath": "images/iconf1_1.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "images/iconf2.png",
+        "selectedIconPath": "images/iconf2_1.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "信息",
+        "iconPath": "images/iconf3.png",
+        "selectedIconPath": "images/iconf3_1.png"
+      },
+      {
+        "pagePath": "pages/person/index",
+        "text": "我的",
+        "iconPath": "images/iconf4.png",
+        "selectedIconPath": "images/iconf4_1.png"
+      }
+    ]
+  }
+}

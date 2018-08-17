@@ -1,0 +1,3 @@
+<view class="video">
+  <video id="myVideo" src="{{videoUrl}}" enable-danmu danmu-btn controls autoplay danmu-btn="{{danmu}}"></video>
+</view>

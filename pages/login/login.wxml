@@ -1,0 +1,22 @@
+<view class="login">
+  <view class='login_logo'><image mode="widthFix" src="/images/logo.png" /></view>
+  <form class='login_form'>
+    <input class="lt {{focus1}}" value="{{name_value}}" bindfocus="bindfocus1" bindblur="bindblur1" bindinput="name_content" type='text' placeholder='请输入用户名' />
+    <input class="lt {{focus2}}" value="{{password_value}}" bindfocus="bindfocus2" bindblur="bindblur2" bindinput="password_content" type='text' password="true" placeholder='请输入密码'  />
+    <button class="lt {{on}}" form-type='submit' bindtap='loginBtn' >登录</button>
+  </form>
+  <view class='login_beij'><image mode="widthFix" src="/images/beij.jpg" /></view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+

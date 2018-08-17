@@ -1,0 +1,5 @@
+<import src="../../template/list.wxml"/>
+<view class="myAsk_list">
+  <template is="ask_list" wx:for="{{[0,1,2,3]}}" wx:key="{{index}}" data="{{item}}"></template>
+</view>
+<include src="../ansForm/ansForm.wxml"/>

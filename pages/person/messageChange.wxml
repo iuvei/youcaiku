@@ -1,0 +1,8 @@
+<!--pages/person/messageChange.wxml-->
+<view class='list'>
+<input placeholder-class='placerStyle' placeholder='请填写{{name}}' value='{{value}}' bindinput='setInput' ></input>
+</view>
+<view class='button-list'>
+<button bindtap="saveMsg" size="{{default}}" loading="{{loading}}" 
+        disabled="{{disabled}}"  >完成 </button>
+</view>

@@ -1,0 +1,22 @@
+<view class="zyName">
+  <view class='zyName_tis'>提交作业请到pc端操作，手机端暂时不支持提交作业。</view>
+  <view class='zyName_top'>
+    <view class='title'>第1章，章节名称</view>
+    <view class='dom flex jusb'>
+      <view class='state'>状态：<text class="state_text">未提交</text></view>
+      <view class='score'>得分:<text class='score_num'>89分</text></view>
+    </view>
+  </view>
+  <view class='zyName_imt'>
+    内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+    <image mode="widthFix" src='/images/imt2.jpg' />
+  </view>
+  <view class='zyName_myPost'>
+    <image class='icon' mode="widthFix" src='/images/icon5.jpg' />
+    内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+    <image mode="widthFix" src='/images/imt2.jpg' />
+  </view>
+  <view class='zyName_pingyu'>
+    评语：<text class='pingyu_info'>点评内容点评内容点评内容点评内容，点评内容点评内容点评内容点评内容</text>
+  </view>
+</view>

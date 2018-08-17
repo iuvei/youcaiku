@@ -1,0 +1,14 @@
+<view class='ans_reply'><view class='ans_reply_text' bindtap='replyBtn'>回复评论</view></view>
+<!-- 回复弹窗 -->
+<view class='ans_form'>
+  <view class="beij {{on}}"></view>
+  <view class="form {{on}}">
+    <form>
+      <view class='form_btn flex jusb'>
+        <button class='btn_quxiao' form-type='reset' bindtap='closeReply'>取消</button>
+        <button class="btn_sum {{lineCount==0?'':'on'}}" form-type='submit' disabled="{{lineCount==0?true:false}}" bindtap='closeReply'>发送</button>
+      </view>
+      <textarea bindinput="changeValue" focus="{{on==''?false:true}}" auto-focus="{{on==''?false:true}}" fixed="true" show-confirm-bar="{{state}}" class='form_text' placeholder='请输入回复内容'></textarea>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+/* pages/account/index.wxss */
+
+page {
+  background: #f4f4f4;
+  border-top: 1px solid #e3e3e3;
+}
+
+.media-list {
+  position: relative;
+  background-color: #fff;
+  margin-top: 14rpx;
+  border-top: 1px solid #e3e3e3;
+}
+
+.media-item {
+  border-bottom: 1px solid #e3e3e3;
+  position: relative;
+}
+
+.media-title {
+  display: flex;
+  display: -webkit-flex;
+  font-size: 14px;
+  line-height: 1.5;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 32rpx;
+}
+
+.media-title-left {
+  color: rgba(0, 0, 0, 0.89);
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.media-title-right {
+  color: rgba(0, 0, 0, 0.38);
+  position: relative;
+  text-align: right;
+  vertical-align: middle;
+  display: flex;
+  display: -webkit-flex;
+}
+
+
+.media-input {
+  color: rgba(0, 0, 0, 0.38);
+}

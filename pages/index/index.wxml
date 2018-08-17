@@ -1,0 +1,101 @@
+<!--index.wxml-->
+<import src="../../template/list.wxml"/>
+<view wx:if="{{loginKey==1}}">
+  <view class='youc login'>
+    <view class='youc_banner'>
+      <swiper indicator-dots="{{indicatorDots}}" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+          <swiper-item>
+            <image src="{{item.banner_img}}" class="slide-image" mode="widthFix" bindload='imgHeight'/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--  -->
+    <view class='youc_content'>
+      <view class='youc_title'>
+        <view class='title_course'>
+          <navigator url='../course/course' open-type="switchTab"><image mode="widthFix" src='/images/icon1.png' />课程中心</navigator>
+        </view>
+        <view class='title_exam'>
+          <navigator url='/pages/examCenter/index'><image mode="widthFix" src='/images/icon2.png' />考试中心</navigator>
+        </view>
+      </view>
+      <view class='youc_course'>
+        <view class='course_content'>
+          <!--头部按钮  -->
+          <view class='course_top'>
+            <view class='course_menu'>
+              <view class="ment {{nnt?'active':''}}" bindtap='ont' data-status="1">课程进行</view>
+              <view class="ment {{nnf?'active':''}}" bindtap='onf' data-status="2">课程结束</view>
+            </view>
+            <navigator url='../course/course' open-type="switchTab" class='course_more'>查看更多></navigator>
+          </view>
+          <!--课程列表-->
+          <view class="{{nnt?'show':'hidden'}}">
+            <view class="course_list" wx:if="{{courses_length>0}}">
+              <template is="course_list" wx:for="{{courses}}" wx:key="{{index}}" data="{{item}}"></template>
+            </view>
+            <view class='zj_none none_content' wx:else>
+              <image mode="widthFix" src='/images/imt_none.png' />
+              <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+            </view>
+          </view>
+
+          <view class="{{nnf?'show':'hidden'}}">
+            <view class="course_list" wx:if="{{courses_length>0}}">
+              <template is="course_list" wx:for="{{courses}}" wx:key="{{index}}" data="{{item}}"></template>
+            </view>
+            <view class='zj_none none_content' wx:else>
+              <image mode="widthFix" src='/images/imt_none.png' />
+              <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <view class='youc noLogin'>
+    <view class='youc_banner'>
+      <swiper indicator-dots="{{indicatorDots}}" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='height:{{Height}}'>
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+          <swiper-item>
+            <navigator url='../login/login'><image src="{{item.banner_img}}" class="slide-image" mode="widthFix" bindload='imgHeight'/></navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!--  -->
+    <view class='youc_content'>
+      <view class='youc_title'>
+        <view class='title_course'>
+          <navigator url='../login/login'><image mode="widthFix" src='/images/icon1.png' />课程中心</navigator>
+        </view>
+        <view class='title_exam'>
+          <navigator url='../login/login'><image mode="widthFix" src='/images/icon2.png' />考试中心</navigator>
+        </view>
+      </view>
+      <view class='youc_course'>
+        <view class='course_content'>
+          <!--头部按钮  -->
+          <view class='course_top'>
+            <view class='course_menu'>
+              <view class="ment active">推荐课程</view>
+            </view>
+          </view>
+          <!--课程列表-->
+          <view class="course_list">
+            <view class='lt' wx:for="{{courses}}" wx:key="{{index}}">
+              <navigator url='../login/login'>
+                <image src='{{item.pic}}' />
+                <view class='lt_text'>{{item.course_name}}</view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

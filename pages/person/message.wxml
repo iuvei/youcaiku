@@ -1,0 +1,270 @@
+<view>
+  <view class='media-list'>
+
+
+    <view class='media-item' bindtap='uploadAvator'>
+        <view class='media-title'>
+          <text class='media-title-left'>头像</text>
+          <view class='media-title-right'>
+            <image class='avator' src='{{userInfo.avatar}}' ></image>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+            <input name='avatar' class='avatar-input' value='{{valueAva}}'></input>
+          </view>
+        </view>
+    </view>
+
+
+    <view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=autograph&value={{userInfo.autograph}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>个性签名</text>
+          <view class='media-title-right'>
+            <view wx:if="{{userInfo.autograph}}">{{userInfo.autograph}}</view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+
+  <view class='media-list'>
+    <view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=id_card&value={{userInfo.id_card}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>身份证</text>
+          <view class='media-title-right'>
+            <view wx:if='{{userInfo.id_card}}'>
+            {{userInfo.id_card}}
+            </view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='media-item'>
+      <view class='media-title'>
+        <text class='media-title-left'>性别</text>
+        <view class='media-title-right'>
+
+          <picker mode="selector" bindchange="bindSexChange" value='{{selectedSex}}' range="{{sexsArray}}">
+            <view class="picker">
+              {{userInfo.sex=='0'?'未填写':userInfo.sex=='1'?'男':'女'}}
+            </view>
+          </picker>
+
+          <icon class='icon-arrow'>
+            <image src='/images/icon3.png'></image>
+          </icon>
+        </view>
+      </view>
+    </view>
+
+
+    <view class='media-item'>
+      <view class='media-title'>
+        <text class='media-title-left'>出生日期</text>
+        <view class='media-title-right'>
+          <picker mode="date" bindchange="bindDateChange" value='{{defaultDate}}' start='1980-01-01' end='{{endTime}}'>
+            <view class="picker">
+              {{defaultDate}}
+            </view>
+          </picker>
+
+          <icon class='icon-arrow'>
+            <image src='/images/icon3.png'></image>
+          </icon>
+        </view>
+      </view>
+    </view>
+
+    <view class='media-item'>
+    <navigator url='/pages/person/messageChange?tag=address&value={{userInfo.address}}'>
+      <view class='media-title'>
+        <text class='media-title-left'>地址</text>
+        <view class='media-title-right'>
+            <view wx:if='{{userInfo.address}}'>
+              {{userInfo.address}}
+           </view>
+<view class='none-sty' wx:else>
+            未填写
+            </view>
+          <icon class='icon-arrow'>
+            <image src='/images/icon3.png'></image>
+          </icon>
+        </view>
+      </view>
+    </navigator>
+    </view>
+  </view>
+
+  <view class='media-list'>
+    <view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=mobile&value={{userInfo.mobile}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>手机号</text>
+          <view class='media-title-right'>
+            <view wx:if="{{userInfo.mobile}}">
+            {{userInfo.mobile}}
+            </view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=qq&value={{userInfo.qq}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>QQ</text>
+          <view class='media-title-right'>
+             <view wx:if="{{userInfo.qq}}">
+            {{userInfo.qq}}
+            </view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=email&value={{userInfo.email}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>邮箱</text>
+          <view class='media-title-right'>
+             <view wx:if='{{userInfo.email}}'>
+            {{userInfo.email}}
+            </view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+
+<view class='media-list'>
+    <view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=name&value={{userInfo.bank.name}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>账户名</text>
+          <view class='media-title-right'>
+             <view wx:if='{{userInfo.bank.name}}'>
+                {{userInfo.bank.name}}
+            </view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=bank_id&value={{userInfo.bank.bank_id}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>银行账号</text>
+          <view class='media-title-right'>
+             <view wx:if='{{userInfo.bank.bank_id}}'>
+            {{userInfo.bank.bank_id}}
+            </view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=open_bank_name&value={{userInfo.bank.open_bank_name}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>开户行</text>
+          <view class='media-title-right'>
+             <view wx:if='{{userInfo.bank.open_bank_name}}'>
+            {{userInfo.bank.open_bank_name}}
+            </view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+<view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=remark&value={{userInfo.bank.remark}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>备注</text>
+          <view class='media-title-right'>
+            <view wx:if='{{userInfo.bank.remark}}'>
+            {{userInfo.bank.remark}}
+            </view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+  <view class='media-list'>
+  <view class='media-item'>
+      <navigator url='/pages/person/messageChange?tag=introduce&value={{userInfo.introduce}}'>
+        <view class='media-title'>
+          <text class='media-title-left'>自我介绍</text>
+          <view class='media-title-right'>
+          <view wx:if='{{userInfo.introduce}}'>
+            {{userInfo.introduce}}
+            </view>
+            <view class='none-sty' wx:else>
+            未填写
+            </view>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view></view>
+  <view class='btn_exit' bindtap='btnExit'>退出登录</view>
+
+</view>

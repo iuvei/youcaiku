@@ -1,0 +1,11 @@
+.course_top,.course_list{display: flex;display: -webkit-flex;justify-content:space-between;}
+.course_top{margin-bottom: 0.5rem;}
+.course_top .course_menu{display: flex;display: -webkit-flex;}
+.course_menu .ment{color: #666;padding:0 0 0.5rem 0;margin-right: 0.6rem;position: relative;}
+.course_menu .ment::after{content: "";width: 60%;height: 2px;background: #1a8cfe;border-radius: 5px;position: absolute;bottom: 0;left: 20%;display: none;}
+.course_list{flex-wrap:wrap;width: 100%;}
+.course_list .lt{width: 48%;margin-bottom: 0.8rem;}
+.course_list .lt image{border-radius: 0.3rem;width:100%;height:5.2rem;}
+.course_list .lt_text{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;margin-top: 0.2rem;}
+.ask_lt{background:#fff;padding: 0.8rem;margin-top: 0.5rem;}
+

@@ -1,0 +1,64 @@
+/* pages/examCenter/index.wxss */
+page{
+  border-top:1px solid #e3e3e3;
+  background-color: #f4f4f4;
+}
+.tab-box{
+  display:flex;
+  display:-webkit-flex;
+  background-color: #fff;
+  justify-content:space-between;
+  font-size: 15px;
+  padding: 0 32rpx;
+  line-height: 1.5;
+  color: rgba(0,0,0,0.60);
+  border-bottom:1px solid #e3e3e3;
+}
+.tab-box .tab-item{
+  padding: 0.4rem 0;
+}
+.tab-box .tab-item.active{
+  color: rgba(0,0,0,0.87);
+  border-bottom:2px solid  #1A8CFE;
+  border-radius: 2px;
+}
+.exam-item{
+  padding: 32rpx;
+  background-color: #fff;
+  margin-bottom: 16rpx;
+}
+.exam-img{
+  width: 100%;
+  height:343rpx;
+  display: block;
+  border-radius: 4px;
+}
+.exam-title{
+  font-size: 18px;
+color: rgba(0,0,0,0.89);
+text-align: left;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+padding: 16rpx 0;
+}
+.exam-media{
+  font-size: 13px;
+color: rgba(0,0,0,0.65);
+display: flex;
+display: -webkit-box;
+  display:-webkit-flex;
+  justify-content:space-between;
+}
+
+.none-tips{
+  font-size: 12px;
+   color: #BEBEBE;
+   text-align: center;
+   padding-top: 300rpx;
+}
+.none-tips image{
+  width: 240rpx;
+  height:210rpx;
+  margin-bottom: 15rpx;
+}

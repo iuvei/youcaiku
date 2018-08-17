@@ -1,0 +1,8 @@
+page{background: #f4f4f4;font-size: 0.8rem;}
+.zyName_tis{color: #555;background: #fffcdc;height:2.8rem;line-height:2.8rem;text-align: center;}
+.zyName_top{padding:0.8rem;background: #fff;color: #595959;}
+.zyName_top .title{margin-bottom: 0.4rem;}
+.zyName_top .state_text{color: #1b8dff;}
+.zyName_info{background: #fff;padding:0.5rem 0.8rem 0.2rem;color: #555;margin-top: 0.6rem;}
+.zyName_info image{display: block;width: 100%;margin:0.5rem 0;}
+.zyName_info_title{font-size:1.0rem;color: #333;margin-bottom: 0.6rem;}

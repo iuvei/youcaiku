@@ -1,0 +1,29 @@
+<view class="weekly">
+  <view class='weekly_form'>
+    <form class='form_content'>
+      <view class='weekly_title'>周报日期</view>
+      <picker mode="date" value="{{start_date}}" start="" end="" bindchange="startDateChange">
+        <view class="picker_start picker_lt flex jusb act">
+          <view class='start_date'><text class='date_text'>开始日期</text>{{start_date}}</view>
+          <view class='tis'>{{tis_start}}</view>
+          <image mode="widthFix" src='/images/icon3.png' />
+        </view>
+      </picker>
+      <picker mode="date" value="{{end_date}}" start="" end="" bindchange="endDateChange">
+        <view class="picker_start picker_lt flex jusb act">
+          <view class='start_date'><text class='date_text'>结束日期</text>{{end_date}}</view>
+          <view class='tis'>{{tis_end}}</view>
+          <image mode="widthFix" src='/images/icon3.png' />
+        </view>
+      </picker>
+      <view class='weekly_title'>周报内容</view>
+      <view class='weekly_textarea'>
+        <textarea class='' maxlength="{{max}}" placeholder='周报不少于200字' value="{{content}}" bindinput="bindinput" bindblur='bindblur' show-confirm-bar="{{showBar}}"></textarea>
+      </view>
+      <view class='weekly_submit flex jusb act'>
+        <button class='btn_save' type='default' data-status="0" bindtap='bindsave'>保存草稿</button>
+        <button class='btn_submit' type='default' form-type="submit" data-status="1" bindtap='bindSum'>提交</button>
+      </view>
+    </form>
+  </view>
+</view>

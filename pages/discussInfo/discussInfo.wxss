@@ -1,0 +1,31 @@
+page{background: #f4f4f4;border-top:1px solid #e6e6e6;}
+.discussInfo_top{padding: 0.8rem;background: #fff;color: #212121;font-size: 1.0rem;margin-bottom: 0.6rem;}
+.discussInfo_top .group{color: #979797;font-size: 0.8rem;margin-top:0.8rem;}
+.ans_ct{padding:1.0rem 0 1.0rem 0;border-bottom: 1px solid #e6e6e6;color: #595959;}
+.ans_top .icon{width: 1.2rem;height: 1.2rem;}
+/* .ans_imt{margin-right:0.5rem;} */
+.ans_imt image{width:2.5rem;height:2.5rem;border-radius: 50%;}
+.ans_info{width: 17.5rem;}
+.ans_list .name{color: #212121;width: 10.0rem;}
+.ans_list .total{font-size: 0.8rem;margin-top: 0.15rem;color: #a3a3a3;}
+.ans_list .total_num{padding:0 0.3rem;}
+.ans_list .ans_time{font-size: 0.8rem;margin:0.3rem 0;color: #a3a3a3;}
+.ansInfo{padding-bottom:3.0rem;}
+
+.ansInfo .ans_lt{padding:1.0rem 0.6rem 1.0rem 0;justify-content:space-between;}
+.ansInfo .ans_list{padding-left: 1.0rem;background: #fff;}
+.ansInfo .ansInfo_list{margin-top:0.5rem;}
+.ansInfo .ansInfo_list_title{color: #212121;line-height:2.5rem;border-bottom:1px solid #e6e6e6;}
+
+.ans_other{font-size: 0.8rem;margin-top: 0.6rem;padding-left:0.5rem;border-left:2px solid #f0f0f0;}
+.ans_other_title{color: #242424;margin-bottom: 0.2rem;}
+
+
+
+
+
+
+
+
+
+

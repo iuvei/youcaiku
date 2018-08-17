@@ -1,0 +1,25 @@
+/* pages/person/messageChange.wxss */
+page {
+  background: #f4f4f4;
+  border-top: 1px solid #e3e3e3;
+}
+.list {
+  position: relative;
+  margin-top: 14rpx;
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e3e3;
+  background-color: #fff;
+  padding: 15rpx 32rpx;
+  font-size: 14px;
+}
+.placerStyle{
+color: rgba(0,0,0,0.38);
+}
+.button-list{
+  margin: 40rpx 32rpx;
+}
+button{
+  background: #1A8CFE;
+  border-radius: 24px;
+  color:#fff;
+}

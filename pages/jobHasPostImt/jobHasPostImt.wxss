@@ -1,0 +1,13 @@
+page{background: #f4f4f4;font-size: 0.8rem;}
+.zyName_tis{color: #555;background: #fffcdc;height:2.8rem;line-height:2.8rem;text-align: center;}
+.zyName_top{padding:0.8rem;background: #fff;color: #595959;}
+.zyName_top .title{margin-bottom: 0.4rem;}
+.zyName_top .state_text{color: #1b8dff;}
+.zyName_top .score_num{color: #1b8dff;}
+.zyName_imt{background: #fff;margin-top: 0.6rem;padding:1.0rem 0.8rem 0.6rem;color: #212121;}
+.zyName_imt image,.zyName_myPost image{display: block;width: 100%;margin:0.6rem 0;}
+.zyName_myPost{padding: 0.8rem 0.8rem 0.6rem;background: #f4f4f4;color: #555;position: relative;}
+.zyName_myPost .icon{width:16px;position: absolute;left: 5%;top:-22px;}
+.zyName_pingyu{background: #fff;padding: 0.8rem;color: #595959;}
+.zyName_pingyu .pingyu_info{color: #ef403b;}
+

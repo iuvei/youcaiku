@@ -1,0 +1,65 @@
+<view class="ansInfo">
+  <view class='ans_list ansInfo_active'>
+    <view class='ans_lt ans_ct flex'>
+        <view class='ans_imt'><image mode="widthFix" src="{{avatar}}" /></view>
+          <view class='ans_info'>
+            <view class='ans_top flex jusb'>
+              <view class='name tov'>{{author}}</view>
+            </view>
+            <view class='ans_time'>{{time_str}}</view>
+            <view class='ans_text'>{{content}}</view>
+          </view>
+      </view>
+  </view>
+  <!-- 回答列表 -->
+  <view wx:if="{{reply_list}}">
+    <view class='ans_list ansInfo_list'>
+      <view class='ansInfo_list_title'>回答（{{total_count}}）</view>
+      <block wx:for="{{reply_list}}" wx:key="*this">
+          <view class='ans_lt ans_ct flex' data-id="{{item.reply_id}}" bindtap='replyBtn'>
+            <view class='ans_imt'><image mode="widthFix" src="{{item.replyer.avatar}}" /></view>
+              <view class='ans_info'>
+                <view class='ans_top flex jusb'>
+                  <view class='name tov'>{{item.replyer.nickname}}</view>
+                </view>
+                <view class='ans_time'>{{item.replyer.time_str}}</view>
+                <view class='ans_text'>{{item.replyer.content}}</view>
+                <view wx:if="{{item.reply_to}}">
+                  <view class='ans_other'>
+                    <view class='ans_other_title'>{{item.reply_to.nickname}}</view>
+                    <view class='ans_other_text'>{{item.reply_to.content}}</view>
+                  </view>
+                </view>
+                <view wx:else></view>
+              </view>
+          </view>
+      </block>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='ans_list ansInfo_list'>
+      <view class='ansInfo_list_title'>回答（0）</view>
+      <view class='ansNone'>
+        <image mode="widthFix" src='/images/none.png' />
+        <view class='ansNone'>童鞋，该区域暂无内容哦！</view>
+      </view>
+    </view>
+  </view>
+  
+</view>
+<!-- 回复 -->
+<view class='ans_reply'><view class='ans_reply_text' data-id='0' bindtap='replyBtn'>回复提问</view></view>
+<!-- 回复弹窗 -->
+<view class='ans_form'>
+  <view class="beij {{on}}"></view>
+  <view class="form {{on}}">
+    <form>
+      <view class='form_btn flex jusb'>
+        <button class='btn_quxiao' form-type='reset' bindtap='closeReply'>取消</button>
+        <button class="btn_sum {{lineCount==0?'':'on'}}" form-type='submit' disabled="{{lineCount==0?true:false}}" bindtap='closeReply' data-rId="{{reply_id}}" bindtap='sumaskText'>发送</button>
+      </view>
+      <textarea maxlength="{{max}}" bindinput="changeValue" bindblur="bindblur" show-confirm-bar="{{state}}" value="{{askcontent}}" class='form_text' placeholder='请输入回复内容'></textarea>
+    </form>
+  </view>
+</view>
+

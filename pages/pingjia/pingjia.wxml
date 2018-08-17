@@ -1,0 +1,91 @@
+<view class="pingjia">
+  <view class='pingjia_star'>
+    <view class='title'>课程评分</view>
+    <!--教师评分-->
+    <view class='pt flex jusb act'>
+      <view class='pt_text'>教师评分</view>
+      <view class="pt_star flex jusb act teacherStar{{teacher_index}}">
+         <i data-index="1" bindtap="teacher"></i>
+         <i data-index="2" bindtap="teacher"></i>
+         <i data-index="3" bindtap="teacher"></i>
+         <i data-index="4" bindtap="teacher"></i>
+         <i data-index="5" bindtap="teacher"></i>
+      </view>
+    </view>
+    <!--课程评价 -->
+    <view class='pt flex jusb act'>
+      <view class='pt_text'>课程评价</view>
+      <view class="pt_star flex jusb act courseStar{{course_index}}">
+         <i data-index="1" bindtap="course"></i>
+         <i data-index="2" bindtap="course"></i>
+         <i data-index="3" bindtap="course"></i>
+         <i data-index="4" bindtap="course"></i>
+         <i data-index="5" bindtap="course"></i>
+      </view>
+    </view>
+    <!--参与感-->
+    <view class='pt flex jusb act'>
+      <view class='pt_text'>参与感</view>
+      <view class="pt_star flex jusb act canyuStar{{canyu_index}}">
+         <i data-index="1" bindtap="canyu"></i>
+         <i data-index="2" bindtap="canyu"></i>
+         <i data-index="3" bindtap="canyu"></i>
+         <i data-index="4" bindtap="canyu"></i>
+         <i data-index="5" bindtap="canyu"></i>
+      </view>
+    </view>
+    <!--实用性-->
+    <view class='pt flex jusb act'>
+      <view class='pt_text'>实用性</view>
+      <view class="pt_star flex jusb act shiyStar{{shiy_index}}">
+         <i data-index="1" bindtap="shiy"></i>
+         <i data-index="2" bindtap="shiy"></i>
+         <i data-index="3" bindtap="shiy"></i>
+         <i data-index="4" bindtap="shiy"></i>
+         <i data-index="5" bindtap="shiy"></i>
+      </view>
+    </view>
+    <!--完整性-->
+    <view class='pt flex jusb act'>
+      <view class='pt_text'>完整性</view>
+      <view class="pt_star flex jusb act fullStar{{full_index}}">
+         <i data-index="1" bindtap="full"></i>
+         <i data-index="2" bindtap="full"></i>
+         <i data-index="3" bindtap="full"></i>
+         <i data-index="4" bindtap="full"></i>
+         <i data-index="5" bindtap="full"></i>
+      </view>
+    </view>
+  </view>
+  <view class='pingjia_text'>
+    <view class=''><textarea show-confirm-bar="{{cbar}}" placeholder='请填写下你的学习感受~' value="{{content}}" bindinput="bindinput"></textarea></view>
+    <view class='nim_btn'>
+      <checkbox-group bindchange="checkboxChange"><label><checkbox value="{{checked}}" />匿名</label></checkbox-group>
+    </view>
+  </view>
+  <view class='pingjia_btn'><button class='btn' bindtap='bindSum'>提交</button></view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

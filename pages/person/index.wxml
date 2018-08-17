@@ -1,0 +1,31 @@
+<!--pages/person/index.wxml-->
+<view>
+  <image src='/images/personBg.png' class='bgImage'></image>
+  <form>
+    <view class='avatorBox'>
+      <image src='{{userInfo.avatar}}' class='avatorPic' bindtap='uploadAvator'></image>
+      <view class='avatorTxt'>{{userInfo.autograph}}</view>
+      <input name='avatar' class='avatar-input' value='{{valueAva}}'></input>
+    </view>
+  </form>
+
+  <view class='media-list'>
+    <view class='media-item' wx:for="{{mediaList}}" wx:key="{{title}}">
+      <navigator url='{{item.url}}'>
+        <icon class='icon-left'>
+          <image src='{{item.iconUrl}}'></image>
+        </icon>
+        <view class='media-title'>
+          <text class='media-title-left'>{{item.title}}</text>
+          <view class='media-title-right'>
+            <icon class='icon-arrow'>
+              <image src='/images/icon3.png'></image>
+            </icon>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+
+</view>

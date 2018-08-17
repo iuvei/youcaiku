@@ -1,0 +1,106 @@
+/* pages/person/message.wxss */
+
+page {
+  background: #f4f4f4;
+  border-top: 1px solid #e3e3e3;
+  padding-bottom: 150rpx;
+}
+
+.avator {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.avatar-input{
+  opacity: 0;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+.media-list {
+  position: relative;
+  background-color: #fff;
+  margin-top: 14rpx;
+  border-top: 1px solid #e3e3e3;
+}
+
+.media-item {
+  border-bottom: 1px solid #e3e3e3;
+  position: relative;
+}
+
+.media-title {
+  display: flex;
+  display: -webkit-flex;
+  font-size: 14px;
+  line-height: 1.5;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 32rpx;
+}
+
+.media-title-left {
+  color: rgba(0, 0, 0, 0.89);
+  flex-shrink: 0;
+  text-align: left;
+  padding-right: 64rpx;
+}
+
+.media-title-right {
+  color: rgba(0, 0, 0, 0.89);
+  position: relative;
+  padding-right: 17px;
+  text-align: right;
+  vertical-align: middle;
+  display: flex;
+  display: -webkit-flex;
+}
+
+.none-sty {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.media-input {
+  color: rgba(0, 0, 0, 0.89);
+}
+
+.icon-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: 0;
+}
+
+.icon-arrow image {
+  width: 10px;
+  height: 15px;
+  vertical-align: top;
+}
+
+.icon-left {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 32rpx;
+}
+
+.icon-left image {
+  width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+.btn_exit{
+  text-align: center;
+  background: #fff;
+  border-top:1px solid #e3e3e3;
+  border-bottom:1px solid #e3e3e3;
+  color: #ff0000;
+  font-size:14px;
+  line-height:1.5;
+  justify-content:space-between;
+  align-items:center;
+  padding:20rpx 32rpx;
+  margin-top:14rpx;
+
+}

@@ -1,0 +1,17 @@
+<template name="course_list">
+  <view class='lt'>
+    <navigator url="../courseInfo/courseInfo?course_id={{item.course_id}}">
+      <image src='{{item.pic}}' />
+      <view class='lt_text'>{{item.course_name}}</view>
+    </navigator>
+  </view>
+</template>
+<template name="ask_list">
+  <view class='ask_lt'>
+    <view class='ask_top flex jusb'>
+      <view class='ask_top_title'>我的提问</view>
+      <view class='ask_top_time'>10秒前</view>
+    </view>
+    <view class='ask_text'>我的提问内容我的提问内容我的提问内容我的提问内容我的提问内容</view>
+  </view>
+</template>

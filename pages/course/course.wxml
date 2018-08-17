@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<import src="../../template/list.wxml"/>
+<view class='youc'>
+  <view class='youc_content'>
+    <view class='youc_course'>
+      <view class='course_content'>
+        <!--头部按钮  -->
+        <view class='course_top'>
+          <view class='course_menu'>
+            <view class="ment {{nnt?'active':''}}" bindtap='ont' data-status="1">课程进行</view>
+            <view class="ment {{nnf?'active':''}}" bindtap='onf' data-status="2">课程结束</view>
+          </view>
+        </view>
+        <!--课程列表-->
+        <view class="{{nnt?'show':'hidden'}}">
+          <view class="course_list" wx:if="{{courses_length>0}}">
+            <template is="course_list" wx:for="{{courses}}" wx:key="{{index}}" data="{{item}}"></template>
+          </view>
+          <view class='zj_none none_content' wx:else>
+            <image mode="widthFix" src='/images/imt_none.png' />
+            <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+          </view>
+        </view>
+
+        <view class="{{nnf?'show':'hidden'}}">
+          <view class="course_list" wx:if="{{courses_length>0}}">
+            <template is="course_list" wx:for="{{courses}}" wx:key="{{index}}" data="{{item}}"></template>
+          </view>
+          <view class='zj_none none_content' wx:else>
+            <image mode="widthFix" src='/images/imt_none.png' />
+            <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,327 @@
+<view class='youc'>
+  <view class='cinfo_top'>
+    <view class='cinfo_top_imt'>
+      <image mode="widthFix" src="{{pic_url}}" />
+      <view class='imt_text'>{{course_name}}</view>
+    </view>
+    <view class='cinfo_top_text'>
+      <view class='vt'>
+        <view class='vt_top vt_name'>{{teacher_name}}</view>
+        <view class='vt_dom'>科任老师</view>
+      </view>
+      <view class='vt'>
+        <view class='vt_top vt_course'>{{total_score}}分</view>
+        <view class='vt_dom'>学分</view>
+      </view>
+      <view class='vt'>
+        <view class='vt_top vt_time'>{{total_time_text}}</view>
+        <view class='vt_dom'>学时</view>
+      </view>
+      <view class='vt'>
+        <view class="vt_top vt_state {{status_color}}">{{status_text}}</view>
+        <view class='vt_dom'>状态</view>
+      </view>
+    </view>
+    <view class='cinfo_top_link'>
+      <view class='link_title'>学生</view>
+      <view class='link_info'>{{student_count}}人</view>
+    </view>
+  </view>
+  <!--列表  -->
+  <view class='cinfo_dom'>
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap='zj_request'>章节</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap='renwu_request'>任务</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="ask_request">问答</view>
+        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="job_request">作业</view>
+        <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="weekly_request">周报</view>
+        <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="discuss_request">讨论组</view>
+        <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="pingjia_request">评价</view>
+        <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="gaik_request">概况</view>
+    </scroll-view>
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
+     style="height:{{scrollHeight}}px">
+        <!--章节-->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" bindscrolltoupper="zjUpper" upper-threshold="70">
+                <view class='zj_content' wx:if="{{zjListNum}}">
+                  <block wx:for="{{zjListData}}" wx:key="*this">
+                      <view class='zj_lt'>
+                        <navigator url="../sectionInfo/sectionInfo?chapter_id={{item.chapter_id}}&idData={{idData}}" class='zj_url'>
+                          <view wx:if="{{item.is_contain_video}}">
+                            <image mode="widthFix" src="/images/video1.png" />
+                          </view>
+                          <view wx:else>
+                            <image mode="widthFix" src="/images/video2.png" />
+                          </view>
+                          <view class='zj_lt_text'>第{{item.chapter_num}}章:<text class='name'>{{item.chapter_name}}</text></view>
+                          <view wx:if="{{item.status==0}}">
+                            <view class="zj_lt_state">未开始</view>
+                          </view>
+                          <view wx:elif="{{item.status==1}}">
+                            <view class="zj_lt_state ing">进行中</view>
+                          </view>
+                          <view wx:else>
+                            <view class="zj_lt_state end">已完成</view>
+                          </view>
+                        </navigator>
+                      </view>
+                  </block>
+                </view>
+                <view class='zj_none none_content' wx:else>
+                  <image mode="widthFix" src='/images/imt_none.png' />
+                  <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <!--任务-->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <view class='renwu_content' wx:if="{{renwuListNum}}">
+                  <block wx:for="{{renwuListData}}" wx:key="*this">
+                      <view class='zj_lt zj_rw'>
+                        <navigator url="../renwuInfo/renwuInfo?task_id={{item.task_id}}&idData={{idData}}" class='zj_url'>
+                          <view class='zj_lt_text'>第{{item.task_num}}章:<text class='name'>{{item.task_name}}</text></view>
+                          <view wx:if="{{item.status==0}}">
+                            <view class="zj_lt_state">未开始</view>
+                          </view>
+                          <view wx:elif="{{item.status==1}}">
+                            <view class="zj_lt_state ing">进行中</view>
+                          </view>
+                          <view wx:else>
+                            <view class="zj_lt_state end">已完成</view>
+                          </view>
+                        </navigator>
+                      </view>
+                  </block>
+                </view>
+                <view class='zj_none none_content' wx:else>
+                  <image mode="widthFix" src='/images/imt_none.png' />
+                  <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <!-- 问答 -->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <view class='ans_content' wx:if="{{askData}}">
+                  <view class='ans_top ans_ct flex'>
+                    <view class='ans_imt'><image mode="widthFix" src="{{userImg}}" /></view>
+                    <view class='ans_info flex jusb act' data-id='0' bindtap='replyBtn'>
+                      <!-- <input type='text' disabled="{{st}}" placeholder="来提一个吧~" data-id='0' bindtap='replyBtn' /> -->
+                      <view >来提一个吧~</view>
+                      <image mode="widthFix" src='/images/icon4.png' class='icon' />
+                    </view>
+                  </view>
+                  <view class='ans_list'>
+                    <block wx:for="{{quest_list}}" wx:key="*this">
+                        <view class='ans_lt ans_ct'>
+                          <navigator url="../ansInfo/ansInfo?quest_id={{item.quest_id}}" class='flex'>
+                            <view class='ans_imt'><image mode="widthFix" src="{{item.avatar}}" /></view>
+                              <view class='ans_info'>
+                                <view class='ans_top flex jusb'>
+                                  <view class='name tov'>{{item.author}}</view>
+                                  <view class='total'>共<text class='total_num'>{{item.reply_count}}</text>个回答</view>
+                                </view>
+                                <view class='ans_time'>{{item.time_str}}前</view>
+                                <view class='ans_text'>{{item.content}}</view>
+                              </view>
+                          </navigator>
+                        </view>
+                    </block>
+                  </view>
+                </view>
+                <view class='zj_none none_content' wx:else>
+                  <image mode="widthFix" src='/images/imt_none.png' />
+                  <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+                  <view data-id='0' bindtap='replyBtn' class='none_btn'>去提问</view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <!--作业-->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <view class='zuoye_content' wx:if="{{homework}}">
+                  <block wx:for="{{homeworkData}}" wx:key="*this">
+                      <view class='zuoye_lt'>
+                        <navigator url="../jobNotPost/jobNotPost?homeworkData={{item.homework_id}}" class='zuoye_url flex jusb act'>
+                          <view class="zuoye_info">
+                            <view class='title'>{{item.name}}</view>
+                            <view class='name'>
+                              第{{item.chapter_num}}章 /
+                              <text wx:if="{{item.type==1}}"><text>图文</text></text>
+                              <text wx:else><text>试卷</text></text>
+                            </view>
+                          </view>
+                          <view wx:if="{{item.status==-1}}">
+                            <view class="zuoye_state c1a">未提交</view>
+                          </view>
+                          <view wx:elif="{{item.status==0}}">
+                            <view class="zuoye_state cef">晚提交</view>
+                          </view>
+                          <view wx:elif="{{item.status==1}}">
+                            <view class="zuoye_state">已提交</view>
+                          </view>
+                        </navigator>
+                      </view>
+                  </block>
+                </view>
+                <view class='zj_none none_content' wx:else>
+                  <image mode="widthFix" src='/images/imt_none.png' />
+                  <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <!-- 周报 -->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <view class='weekly weekly_content' wx:if="{{weeklyData}}">
+                  <view class='ans_top ans_ct flex'>
+                    <view class='ans_info flex jusb act' bindtap='weeylyUrl'>
+                      <view class=''>周报不少于200字~</view>
+                      <image mode="widthFix" src='/images/icon4.png' class='icon' />
+                    </view>
+                  </view>
+                  <block wx:for="{{weekly_list}}" wx:key="*this">
+                      <view class='weekly_lt'>
+                        <navigator url="../weeklyInfo/weeklyInfo?weekly_id={{item.weekly_id}}&course_id={{idData}}" class='zuoye_url flex jusb act'>
+                            <view class="weekly_name">{{item.start_time}}~{{item.end_time}}周总结</view>
+                            <view wx:if="{{item.status==1}}">
+                              <view class='weekly_state c1b'>已提交</view>
+                            </view>
+                            <view wx:else>
+                              <view class='weekly_state cf0'>未提交</view>
+                            </view>
+                          </navigator>
+                      </view>
+                  </block>
+                </view>
+                <view class='zj_none none_content' wx:else>
+                  <image mode="widthFix" src='/images/imt_none.png' />
+                  <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+                  <view bindtap='weeylyUrl' class='none_btn'>写周报</view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <!--讨论组-->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <view class='taolun_content' wx:if="{{discussData}}">
+                  <block wx:for="{{discussion_group_list}}" wx:key="*this">
+                      <view class='discuss_lt'>
+                        <navigator url="../discussInfo/discussInfo?group_id={{item.group_id}}" class='discuss_url'>
+                          <view class='discuss_text'>{{item.title}}</view>
+                          <view class='discuss_dom flex jusb'>
+                            <view class='dom_name'>{{item.class_name}}/{{item.group_name}}</view>
+                            <view class='dom_askName'>共{{item.reply_count}}个回答</view>
+                          </view>
+                        </navigator>
+                      </view>
+                  </block>
+                </view>
+                <view class='zj_none none_content' wx:else>
+                  <image mode="widthFix" src='/images/imt_none.png' />
+                  <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <!--评价-->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <view class='pingjia_has pingjia_content' wx:if="{{myevaluate}}">
+                  <!-- 我的评价 -->
+                  <view class='pingjia_lt'>
+                    <view class='pingjia_url flex jusb'>
+                      <view class='pingjia_imt'><image mode="widthFix" src="{{userImg}}" /></view>
+                      <view class='pingjia_info'>
+                        <view class='info_top flex jusb act'>
+                          <view class='title flex jusb act'>
+                            <view class='title_name tov'>{{userName}}</view>
+                            <view class="title_star flex jusb act star{{comprehensive}}">
+                              <i></i><i></i><i></i><i></i><i></i>
+                            </view>
+                          </view>
+                          <view class='time'>{{created_time}}</view>
+                        </view>
+                        <view class='info_lt flex'>
+                          <view class='lt'>教师评价({{teache_evaluate}}星)</view>
+                          <view class='lt'>课程评价({{course_evaluate}}星)</view>
+                          <view class='lt'>参与感({{sense_participation}}星)</view>
+                          <view class='lt'>实用性({{practicability}}星)</view>
+                          <view class='lt'>完整性({{integrality}}星)</view>
+                        </view>
+                        <view class='info_text'>{{evaluate_content}}</view>
+                      </view>
+                    </view>
+                  </view>
+                  <!-- 全部评价 -->
+                  <block wx:for="{{evaluate_list}}" wx:key="*this">
+                      <view class='pingjia_lt'>
+                        <view class='pingjia_url flex jusb'>
+                          <view wx:if="{{item.is_anonymous}}">
+                            <view class='pingjia_imt'><image mode="widthFix" src='/images/imt_m.png' /></view>
+                          </view>
+                          <view wx:else>
+                            <view class='pingjia_imt'><image mode="widthFix" src="{{item.avatar}}" /></view>
+                          </view>
+                          <view class='pingjia_info'>
+                            <view class='info_top flex jusb act'>
+                              <view class='title flex jusb act'>
+                                <view wx:if="{{item.is_anonymous}}">
+                                  <view class='title_name tov'>匿名</view>
+                                </view>
+                                <view wx:else>
+                                  <view class='title_name tov'>{{item.nickname}}</view>
+                                </view>
+
+                                <view class="title_star flex jusb act star{{item.comprehensive}}">
+                                  <i></i><i></i><i></i><i></i><i></i>
+                                </view>
+                              </view>
+                              <view class='time'>{{item.created_time}}</view>
+                            </view>
+                            <view class='info_lt flex'>
+                              <view class='lt'>教师评价({{item.teache_evaluate}}星)</view>
+                              <view class='lt'>课程评价({{item.course_evaluate}}星)</view>
+                              <view class='lt'>参与感({{item.sense_participation}}星)</view>
+                              <view class='lt'>实用性({{item.practicability}}星)</view>
+                              <view class='lt'>完整性({{item.integrality}}星)</view>
+                            </view>
+                            <view class='info_text'>{{item.evaluate_content}}</view>
+                          </view>
+                        </view>
+                      </view>
+                  </block>
+                </view>
+                <view class='zj_none none_content' wx:else>
+                  <image mode="widthFix" src='/images/imt_none.png' />
+                  <view class='none_text'>先评价，才能查看全部评价</view>
+                  <navigator url='../pingjia/pingjia?sup_id={{idData}}' class='none_btn'>去评价</navigator>
+                </view>
+            </scroll-view>
+        </swiper-item>
+        <!-- 概况 -->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scoll-h" >
+                <view class='gaik_info gaik_content'>
+                  <rich-text nodes="{{gaik_info}}"></rich-text>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+  </view>
+  <!-- 回复弹窗 -->
+  <view class='ans_form'>
+    <view class="beij {{on}}"></view>
+    <view class="form {{on}}">
+      <form>
+        <view class='form_btn flex jusb'>
+          <button class='btn_quxiao' form-type='reset' bindtap='closeReply'>取消</button>
+          <button class="btn_sum {{lineCount==0?'':'on'}}" form-type='submit' disabled="{{lineCount==0?true:false}}" bindtap='closeReply' data-rId="{{reply_id}}" bindtap='sumaskText'>发送</button>
+        </view>
+        <textarea maxlength="{{max}}" bindinput="changeValue" bindblur="bindblur" show-confirm-bar="{{state}}" value="{{askcontent}}" class='form_text' placeholder='请输入回复内容'></textarea>
+      </form>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,37 @@
+<!--pages/message/message.wxml-->
+<view class='youc'>
+  <!--头部按钮  -->
+  <view class='tab-box'>
+    <view class='tab-itemBox'>
+      <view class="tab-item  {{activeTag==='1'?'active':''}}" bindtap='getMsg'>收件箱</view>
+      <view class="tab-item {{activeTag==='2'?'active':''}}" bindtap='sendMsg'>发件箱</view>
+    </view>
+  </view>
+  <!--列表页  -->
+    <scroll-view scroll-y style="height:{{scrollHeight}}px;padding-top:42px;" bindscrolltolower="loadMore" lower-threshold='50'>
+  <view class='media-list' wx:for='{{list}}' wx:key='{{index}}'>
+  <navigator url="/pages/messageDetail/messageDetail?tag={{activeTag}}&letter_id={{item.letter_id}}&is_read={{item.is_read}}">
+    <view class='media-img'>
+    <image src='{{item.avatar}}'></image>
+    <icon class='icon-noread' wx:if='{{activeTag==="1" && !item.is_read}}'></icon>
+    </view>
+    <view class='media-item'>
+      <view class='media-title'>
+        <text class='media-title-left'>{{item.nickname}}</text>
+        <view class='media-title-right'>
+      <text class='text'>{{item.created_time}}</text>
+        <icon class='icon-arrow'>
+        <image src='/images/icon3.png'></image>
+        </icon>
+        </view>
+      </view>
+      <view class='media-content'>{{item.title}}</view>
+    </view>
+    </navigator>
+  </view>
+  <view wx:if='{{(list.length<=0 && isDone)}}' class='none-tips'>
+    <image src='/images/none.png'></image>
+    <view>童鞋，该区域暂无内容哦！</view>
+    </view>
+  </scroll-view>
+</view>

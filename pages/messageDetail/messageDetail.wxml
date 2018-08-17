@@ -1,0 +1,17 @@
+<!--pages/messageDetail/messageDetail.wxml-->
+<view>
+
+  <view class='messageDetailBox'>
+    <view class='.message-title'>
+      {{title}}：{{name}}
+    </view>
+    <view class='message-small'>
+      {{time}}
+    </view>
+  </view>
+  <view class='message-contentBox'>
+    <rich-text nodes='{{myrich}}'></rich-text>
+  </view>
+ 
+
+</view>

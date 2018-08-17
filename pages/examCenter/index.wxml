@@ -1,0 +1,30 @@
+<!--pages/examCenter/index.wxml-->
+<view>
+  <!--头部按钮  -->
+  <view class='tab-box'>
+    <view data-index='{{0}}' class="tab-item  {{activeTag=='0'?'active':''}}" bindtap='changeList'>未开始</view>
+    <view data-index='{{1}}' class="tab-item {{activeTag=='1'?'active':''}}" bindtap='changeList'>进行中</view>
+    <view data-index='{{2}}' class="tab-item {{activeTag=='2'?'active':''}}" bindtap='changeList'>已结束</view>
+    <view data-index='{{3}}' class="tab-item {{activeTag=='3'?'active':''}}" bindtap='changeList'>已完成</view>
+  </view>
+  <!-- 列表 -->
+  <scroll-view scroll-y style="height:{{scrollHeight}}px;" bindscrolltolower="loadMore" lower-threshold='50'>
+  <view class='exam-list'>
+    <view class='exam-item' wx:for='{{list}}' wx:key='{{test_id}}'>
+      <navigator url="/pages/examCenter/detail?test_id={{item.test_id}}">
+      <image class='exam-img' src='{{item.pic}}'></image>
+      <view class='exam-title'>{{item.test_name}}</view>
+      <view class='exam-media'>
+        <view>时长：{{item.longTime}}</view>
+        <view>考试时间：{{item.created_time}}</view>
+      </view>
+      </navigator>
+    </view>
+
+    <view wx:if='{{(list.length<=0 && isDone)}}' class='none-tips'>
+    <image src='/images/none.png'></image>
+    <view>童鞋，该区域暂无内容哦！</view>
+    </view>
+  </view>
+</scroll-view>
+</view>

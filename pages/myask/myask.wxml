@@ -1,0 +1,32 @@
+<view wx:if="{{questData}}">
+  <view class="myAsk_list" wx:for="{{quest_list}}" wx:key="{{index}}">
+    <view class='ask_lt'>
+      <view class='ask_top flex jusb'>
+        <view class='ask_top_title'>我的提问</view>
+        <view class='ask_top_time'>{{item.time_str}}</view>
+      </view>
+      <view class='ask_text'>{{item.content}}</view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <view class='none_content'>
+    <image mode="widthFix" src='/images/imt_none.png' />
+    <view class='none_text'>童鞋，该区域暂无内容哦！</view>
+  </view>
+</view>
+<!-- 回复 -->
+<view class='ans_reply'><view class='ans_reply_text' data-id='0' bindtap='replyBtn'>来提一个吧～</view></view>
+<!-- 回复弹窗 -->
+<view class='ans_form'>
+  <view class="beij {{on}}"></view>
+  <view class="form {{on}}">
+    <form>
+      <view class='form_btn flex jusb'>
+        <button class='btn_quxiao' form-type='reset' bindtap='closeReply'>取消</button>
+        <button class="btn_sum {{lineCount==0?'':'on'}}" form-type='submit' disabled="{{lineCount==0?true:false}}" bindtap='closeReply' data-rId="{{reply_id}}" bindtap='sumaskText'>发送</button>
+      </view>
+      <textarea bindinput="changeValue" maxlength="{{max}}" bindblur='bindblur' show-confirm-bar="{{state}}" value="{{askcontent}}" class='form_text' placeholder='来提一个吧～'></textarea>
+    </form>
+  </view>
+</view>

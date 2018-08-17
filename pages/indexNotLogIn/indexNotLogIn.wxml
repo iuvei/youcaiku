@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<import src="../../template/list.wxml"/>
+<view class='youc noLogin'>
+  <view class='youc_banner'>
+    <swiper indicator-dots="{{indicatorDots}}" circular="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style='height:{{Height}}'>
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <navigator url='../login/login'><image src="{{item.banner_img}}" class="slide-image" mode="widthFix" bindload='imgHeight'/></navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--  -->
+  <view class='youc_content'>
+    <view class='youc_title'>
+      <view class='title_course'>
+        <navigator url='../login/login'><image mode="widthFix" src='/images/icon1.png' />课程中心</navigator>
+      </view>
+      <view class='title_exam'>
+        <navigator url='../login/login'><image mode="widthFix" src='/images/icon2.png' />考试中心</navigator>
+      </view>
+    </view>
+    <view class='youc_course'>
+      <view class='course_content'>
+        <!--头部按钮  -->
+        <view class='course_top'>
+          <view class='course_menu'>
+            <view class="ment active">推荐课程</view>
+          </view>
+        </view>
+        <!--课程列表-->
+        <view class="course_list">
+          <view class='lt' wx:for="{{courses}}" wx:key="{{index}}">
+            <navigator url='../login/login'>
+              <image src='{{item.pic}}' />
+              <view class='lt_text'>{{item.course_name}}</view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

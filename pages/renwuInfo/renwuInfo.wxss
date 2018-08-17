@@ -1,0 +1,15 @@
+page{padding-bottom:5.0rem;background: #f4f4f4;}
+.cname_top{padding: 0.8rem;border-top:1px solid #e6e6e6;background: #fff;}
+.cname_top_teacher{padding-bottom: 0.7rem;margin-bottom: 0.7rem;border-bottom:1px solid #e6e6e6;}
+.teacher_info image{width:2.5rem;height: 2.5rem;border-radius: 50%;}
+.teacher_name{width:8.0rem;margin-left: 0.5rem;font-size: 0.8rem;}
+.teacher_time{width:6.5rem;font-size:0.85rem;text-align: center;}
+.time_remaining{font-size:12px;width: 100%;height: 1.4rem;background: #1a8cfe;color: #fff;line-height: 1.4rem;border-radius: 1.0rem;}
+.time_syu{margin-top:0.15rem;color: #666;}
+.time_syu .min{color: #9e9e9e;}
+.title_name{font-size: 1.0rem;color: #000;}
+.title_tis{color: #9e9e9e;font-size: 0.75rem;margin-top:0.2rem;}
+.cname_info{background: #f4f4f4;padding:0.5rem 0.8rem 0.2rem;color: #555555;}
+.cname_info image{display: block;width: 100%;margin:0.5rem 0;}
+.couse_fix .video{display:none;}
+.video{display: none;}

@@ -1,0 +1,2 @@
+<!--pages/examCenter/examPaper.wxml-->
+ <web-view src="{{list.content_url}}"></web-view>

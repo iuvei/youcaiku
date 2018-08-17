@@ -1,0 +1,70 @@
+/* pages/examCenter/detail.wxss */
+.exam-top{
+  background-image: linear-gradient(-179deg, #40C4FF 6%, #1E91FE 100%);
+  height: 200rpx;
+  font-size: 20px;
+  color: #FFFFFF;
+  padding: 0 72rpx;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.exam-top-text{
+  width: 70%;
+}
+.exam-top .right-pic{
+  width: 126rpx;
+  height: 152rpx;
+}
+
+.exam-detail-title{
+  margin: 0 32rpx;
+  padding: 32rpx 0;
+  border-bottom:1px solid #dcdcdc;
+}
+.title{
+  font-size: 18px;
+color: rgba(0,0,0,0.87);
+letter-spacing: 0;
+text-align: left;
+line-height: 18px;
+margin-bottom: 32rpx;
+}
+.media{
+  font-size: 13px;
+  color: rgba(0,0,0,0.65);
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+
+.exam-content{
+  font-size: 13px;
+  color: rgba(0,0,0,0.65);
+  padding: 32rpx;
+  line-height: 1.5;
+}
+.score-text{
+  font-size: 60px;
+  line-height: 60px;
+}
+.image-score{
+  width: 74px;
+  height: 13px;
+  display: block;
+}
+.button-list{
+  margin: 40rpx 0;
+}
+.link{
+  background: #1A8CFE;
+  border-radius: 24px;
+  color:#fff;
+  text-align: center;
+  padding:15rpx;
+  font-size: 16px;
+}
+.pic{
+  max-width: 100%;
+}

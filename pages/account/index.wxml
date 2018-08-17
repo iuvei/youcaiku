@@ -1,0 +1,13 @@
+<!--pages/account/index.wxml-->
+<view>
+
+  <view class='media-list'>
+    <view class='media-item' wx:for='{{list}}' wx:key="{{name}}">
+        <view class='media-title'>
+          <text class='media-title-left'>{{item.name}}</text>
+          <view class='media-title-right'>{{item.value}}</view>
+        </view>
+    </view>
+  </view>
+
+</view>

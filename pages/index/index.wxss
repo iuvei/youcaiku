@@ -1,0 +1,11 @@
+/**index.wxss**/
+.youc_banner{height: 10.0rem;overflow: hidden; }
+.youc_banner image{width: 100%;}
+.youc_banner swiper{height: 10.0rem;overflow: hidden;}
+.youc_title{display: flex;display: -webkit-flex;justify-content:space-between;}
+.youc_title>view{width: 48%;height:5.0rem;line-height: 5.0rem;text-align: center;border-radius:0.3rem;background: #ccc;}
+.youc_title image{width: 2.5rem;height: 2.5rem;vertical-align: middle;margin-right: 0.5rem;}
+.youc_title .title_course{color: #1a8cfe;background: #a3d1ff;}
+.youc_title .title_exam{color: #53b9a8;background: #bae3dc;}
+.youc_course{padding-top: 1.0rem;}
+.course_top .course_more{font-size: 0.8rem;color: #9e9e9e;padding-top: 0.15rem;}
