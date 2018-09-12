@@ -114,7 +114,7 @@ Page({
           var Num = md5.md5(that.data.school_id + that.data.student_num).toLowerCase();
           app.globalData.TIMESTAMP = (Date.parse(new Date()) / 1000).toString();
           app.globalData.AUTH_TYPE = "USER_AUTH";
-          app.globalData.TOKEN = md5.md5((Date.parse(new Date()) / 1000).toString() + '8741030278D18DB3BE8CAAC79935CAC7' + that.data.user_id + Num).toLowerCase();
+          app.globalData.TOKEN = md5.md5((Date.parse(new Date()) / 1000).toString() + 'app_secret' + that.data.user_id + Num).toLowerCase();
           app.globalData.USER_ID = that.data.user_id;
           app.globalData.headerData['TRAINING-TIMESTAMP'] = app.globalData.TIMESTAMP;
           app.globalData.headerData['TRAINING-AUTH-TYPE'] = app.globalData.AUTH_TYPE;

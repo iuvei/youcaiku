@@ -117,7 +117,7 @@ Page({
     wx.clearStorageSync();
     app.globalData.headerData['TRAINING-TIMESTAMP'] = (Date.parse(new Date()) / 1000).toString();
     app.globalData.headerData['TRAINING-AUTH-TYPE'] = 'BASIC_AUTH';
-    app.globalData.headerData['TRAINING-TOKEN'] = md5.md5((Date.parse(new Date()) / 1000).toString() + '8741030278D18DB3BE8CAAC79935CAC7').toLowerCase();
+    app.globalData.headerData['TRAINING-TOKEN'] = md5.md5((Date.parse(new Date()) / 1000).toString() + 'app_secret').toLowerCase();
     app.globalData.headerData['TRAINING-USER-ID'] = '';
     wx.switchTab({
       url: '../index/index'
