@@ -44,7 +44,7 @@ App({
     on: "",
     nowDate: Date.parse(new Date()) / 1000,
     authTYPE:"BASIC_AUTH",
-    app_secret:'8741030278D18DB3BE8CAAC79935CAC7',
+    app_secret:'',
     urlLink:"https://1354.com.cn/api/web",
     headerData: {
       'content-type': 'application/json', // 默认值
@@ -52,7 +52,7 @@ App({
       'APP-VERSION': '2.1.0',
       'TRAINING-AUTH-TYPE': 'BASIC_AUTH',
       'TRAINING-TIMESTAMP': (Date.parse(new Date()) / 1000).toString(),
-      'TRAINING-TOKEN': md5.md5((Date.parse(new Date()) / 1000).toString() +'8741030278D18DB3BE8CAAC79935CAC7').toLowerCase(),
+      'TRAINING-TOKEN': md5.md5((Date.parse(new Date()) / 1000).toString() +'app_secret').toLowerCase(),
       'TRAINING-USER-ID':''
     },
     loginKeyNum:0,
